@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>27° Que Viva La Salsa · 30 Maggio – 2 Giugno 2026</title>
+<meta name="description" content="Programma 27° edizione Que Viva La Salsa 2026. Lezioni di Salsa, Bachata, Kizomba e Urban dal 30 Maggio al 2 Giugno.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-2: #12121c;
+    --card: #181826;
+    --card-hover: #20203a;
+    --text: #f5f1e8;
+    --text-dim: #a8a39a;
+    --text-mute: #6b6960;
+    --border: #2a2a3e;
+
+    /* Genre colors */
+    --salsa: #ff3b30;        /* rosso fuoco */
+    --salsa-soft: #ff3b3022;
+    --bachata: #ff8a00;      /* arancio caldo */
+    --bachata-soft: #ff8a0022;
+    --kizomba: #6a5acd;      /* viola profondo */
+    --kizomba-soft: #6a5acd22;
+    --urban: #14b8a6;        /* teal */
+    --urban-soft: #14b8a622;
+
+    --maxw: 1200px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding: 80px 20px 60px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at top left, rgba(255,59,48,0.15), transparent 50%),
+      radial-gradient(ellipse at top right, rgba(106,90,205,0.15), transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(255,138,0,0.10), transparent 60%),
+      var(--bg);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; max-width: var(--maxw); margin: 0 auto; }
+  .edition {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 18vw, 200px);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    background: linear-gradient(180deg, #fff 0%, #ff8a00 50%, #ff3b30 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 4px;
+  }
+  .edition sup { font-size: 0.4em; vertical-align: super; }
+  .title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(36px, 7vw, 64px);
+    color: #fff;
+    margin-bottom: 16px;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  .subtitle {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--text-dim);
+    max-width: 560px;
+    margin: 0 auto 32px;
+    letter-spacing: 0.02em;
+  }
+  .dates {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .date-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .date-pill strong { color: #ff8a00; }
+
+  /* ---------- STICKY NAV ---------- */
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 2px;
+  }
+  .nav-row::-webkit-scrollbar { display: none; }
+
+  .nav-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-mute);
+    font-weight: 700;
+    padding: 0 4px;
+  }
+
+  .chip {
+    flex-shrink: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+  .chip:hover { background: var(--card-hover); color: var(--text); }
+  .chip.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+  .chip[data-genre="salsa"].active { background: var(--salsa); border-color: var(--salsa); color: #fff; }
+  .chip[data-genre="bachata"].active { background: var(--bachata); border-color: var(--bachata); color: #fff; }
+  .chip[data-genre="kizomba"].active { background: var(--kizomba); border-color: var(--kizomba); color: #fff; }
+  .chip[data-genre="urban"].active { background: var(--urban); border-color: var(--urban); color: #fff; }
+
+  .chip .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .chip[data-genre="salsa"] .dot { background: var(--salsa); }
+  .chip[data-genre="bachata"] .dot { background: var(--bachata); }
+  .chip[data-genre="kizomba"] .dot { background: var(--kizomba); }
+  .chip[data-genre="urban"] .dot { background: var(--urban); }
+
+  /* ---------- MAIN ---------- */
+  main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 32px 16px 80px;
+  }
+
+  .day {
+    margin-bottom: 48px;
+    scroll-margin-top: 140px;
+  }
+  .day-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-head h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 6vw, 48px);
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+  .day-head h2 span {
+    color: var(--text-mute);
+    font-size: 0.5em;
+    margin-left: 8px;
+    letter-spacing: 0.1em;
+  }
+  .day-count {
+    font-size: 12px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Meal banners */
+  .meal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    background: linear-gradient(90deg, rgba(255,138,0,0.10), transparent);
+    border-left: 3px solid #ff8a00;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .meal-icon { font-size: 18px; }
+  .meal-time { font-weight: 700; color: #ff8a00; }
+  .meal-desc { color: var(--text-dim); }
+
+  /* Slot group */
+  .slot {
+    margin-bottom: 24px;
+  }
+  .slot-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .slot-time::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--text);
+    border-radius: 50%;
+  }
+
+  .lessons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .lesson {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 16px 14px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+  }
+  .lesson:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .lesson::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .lesson[data-genre="salsa"]::before { background: var(--salsa); }
+  .lesson[data-genre="bachata"]::before { background: var(--bachata); }
+  .lesson[data-genre="kizomba"]::before { background: var(--kizomba); }
+  .lesson[data-genre="urban"]::before { background: var(--urban); }
+
+  .lesson-room {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-mute);
+    margin-bottom: 8px;
+    padding: 3px 8px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 4px;
+  }
+  .lesson-teacher {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.25;
+  }
+  .lesson-style {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .lesson-level {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+  .lesson[data-genre="salsa"] .lesson-level { background: var(--salsa-soft); color: var(--salsa); }
+  .lesson[data-genre="bachata"] .lesson-level { background: var(--bachata-soft); color: var(--bachata); }
+  .lesson[data-genre="kizomba"] .lesson-level { background: var(--kizomba-soft); color: var(--kizomba); }
+  .lesson[data-genre="urban"] .lesson-level { background: var(--urban-soft); color: var(--urban); }
+
+  /* Evening events */
+  .evening {
+    background: linear-gradient(135deg, rgba(255,59,48,0.12), rgba(106,90,205,0.12));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .evening-time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+  .evening-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .evening-desc strong { color: var(--text); }
+
+  /* Empty state */
+  .empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-mute);
+    font-size: 14px;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px dashed var(--border);
+  }
+
+  .hidden { display: none !important; }
+
+  /* Info section */
+  .info {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    color: #ff8a00;
+  }
+  .info p {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .info p strong { color: var(--text); }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-mute);
+    font-size: 13px;
+  }
+  footer .next-year {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    color: var(--text);
+    display: block;
+    margin-bottom: 8px;
+  }
+  footer .next-dates {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.1em;
+    color: #ff8a00;
+    margin-top: 4px;
+  }
+
+  /* Back to top */
+  .back-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    z-index: 99;
+    font-weight: 700;
+  }
+  .back-top.show { opacity: 1; pointer-events: auto; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 16px 40px; }
+    main { padding: 24px 12px 60px; }
+    .lessons { grid-template-columns: 1fr; }
+    .day-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="edition">27<sup>°</sup></div>
+    <div class="title">Que Viva La Salsa</div>
+    <p class="subtitle">La grande festa internazionale di Salsa, Bachata, Kizomba e Urban torna per la sua 27ª edizione.</p>
+    <div class="dates">
+      <span class="date-pill"><strong>30</strong> Maggio</span>
+      <span class="date-pill"><strong>31</strong> Maggio</span>
+      <span class="date-pill"><strong>1</strong> Giugno</span>
+      <span class="date-pill"><strong>2</strong> Giugno</span>
+      <span class="date-pill">2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <div>
+      <div class="nav-label">Filtra per genere</div>
+      <div class="nav-row" id="genre-filter">
+        <button class="chip active" data-genre="all">Tutti</button>
+        <button class="chip" data-genre="salsa"><span class="dot"></span>Salsa</button>
+        <button class="chip" data-genre="bachata"><span class="dot"></span>Bachata</button>
+        <button class="chip" data-genre="kizomba"><span class="dot"></span>Kizomba</button>
+        <button class="chip" data-genre="urban"><span class="dot"></span>Urban / Reggaeton</button>
+      </div>
+    </div>
+    <div>
+      <div class="nav-label">Vai al giorno</div>
+      <div class="nav-row">
+        <a class="chip" href="#g1">Sabato 30 Mag</a>
+        <a class="chip" href="#g2">Domenica 31 Mag</a>
+        <a class="chip" href="#g3">Lunedì 1 Giu</a>
+        <a class="chip" href="#g4">Martedì 2 Giu</a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<main id="program">
+  <!-- Days are rendered by JS -->
+</main>
+
+<footer>
+  <span class="next-year">Ci vediamo l'anno prossimo!</span>
+  Que Viva La Salsa 2027
+  <div class="next-dates">28 · 29 · 30 MAGGIO</div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Torna su">↑</button>
+
+<script>
+  // ---------- DATA ----------
+  // Genre detection helper based on style name
+  function detectGenre(style) {
+    const s = style.toLowerCase();
+    if (s.includes('kizomba') || s.includes('semba') || s.includes('urbankiz') || s.includes('urban kiz') || s.includes('couple - glide') || (s.includes('solo') && s.includes('man'))) return 'kizomba';
+    if (s.includes('bachata') || s.includes('bachazouk')) return 'bachata';
+    if (s.includes('reggaeton') || s.includes('dembow') || s.includes('footwork l.a')) return 'urban';
+    // Music interpretation, musicality, pasitos, son, salsa, mambo, timba, afro, clave, chachacha → salsa family
+    return 'salsa';
+  }
+
+  const days = [
+    {
+      id: 'g1',
+      title: 'Sabato 30 Maggio',
+      subtitle: 'Apertura',
+      slots: [
+        {
+          time: '18:30 – 19:30',
+          lessons: [
+            { room: 'Gazebo', teacher: 'Maurizio Bollo & Serena', style: 'Bachata Fusion', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Kasino Latino e Ilenia Pasion Salsera', style: 'Salsa Portoricana', level: 'Liv. Open' }
+          ]
+        }
+      ],
+      meals: [
+        { time: '19:30 – 21:45', desc: 'Cena a buffet al Belvedere (puntuali)' }
+      ],
+      evenings: [
+        { time: '22:00', desc: '<strong>Serata danzante in Gazebo</strong> (Salsa e Bachata) — Sala Orcio (Kizomba)' }
+      ]
+    },
+    {
+      id: 'g2',
+      title: 'Domenica 31 Maggio',
+      subtitle: '',
+      meals_top: { time: '08:00 – 10:00', desc: 'Colazione al Belvedere' },
+      slots: [
+        {
+          time: '10:30 – 11:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Lorenzo e Ginevra', style: 'Salsa in Linea', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Marco y Emily', style: 'Bachata Fusion', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Mara e Tiziana', style: 'Stile Donna', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Gugu Ricci', style: 'Musicality', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '11:30 – 12:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Locura Latina', style: 'Salsa Portoricana', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Caribe Fusion Dance Marche', style: 'Bachata Sensual', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Urban Project Gold', style: 'Salsa Fusion', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Dino Style', style: 'Kizomba Fusion', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '15:30 – 16:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Rupi e Laura', style: 'Salsa In Linea', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Maurizio Bollo & Serena', style: 'Bachata Moderna', level: 'Liv. Intermedio' },
+            { room: 'Gazebo', teacher: 'Full Project', style: 'Clave / Son / Chachacha', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Fernando e Michela', style: 'Kizomba da Banda', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '16:30 – 17:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Johnny Vazquez', style: 'Salsa Fusion Footwork', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Sala Congressi', teacher: 'Willy y Noura', style: 'Bachata Popiwa', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Claudio D\'Ercole', style: 'Pasitos', level: 'Liv. Intermedio' },
+            { room: 'Orcio', teacher: 'Ozy Shyne', style: 'Couple - Glide & Slide', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '17:30 – 18:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Dominican Power', style: 'Salsa Cubana', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Sala Congressi', teacher: 'Edwin y Marianita', style: 'Dominican Pacheco Footwork', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Roly Maden', style: 'Son Cubano', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Danilo e Fausta', style: 'Kizomba Fusion', level: 'Liv. Intermedio' }
+          ]
+        },
+        {
+          time: '18:30 – 19:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Marco Ferrigno & Ansima Production', style: 'Mambo Pasitos', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Sergio Sanchez y Elena', style: 'Bachata Sensual', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Angelo Gioffrè', style: 'Afro', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Edo e Giuly', style: 'Kizomba Fusion', level: 'Liv. Intermedio' }
+          ]
+        }
+      ],
+      meals: [
+        { time: '12:45 – 15:00', desc: 'Pranzo a buffet al Belvedere (puntuali)' },
+        { time: '19:45 – 22:00', desc: 'Cena a buffet al Belvedere (puntuali)' }
+      ],
+      evenings: [
+        { time: '22:00', desc: '<strong>Show…</strong> a seguire serata danzante in Terrazza<br>Sala Salsa e Bachata (Terrazza) · Sala Kizomba (Sala Playground)' }
+      ]
+    },
+    {
+      id: 'g3',
+      title: 'Lunedì 1 Giugno',
+      subtitle: '',
+      slots: [
+        {
+          time: '09:45 – 10:45',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Ali-Z', style: 'Reggaeton', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Alessio e Natalia', style: 'Bachazouk', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Maria y Vincenzo', style: 'Spinning Partnerwork', level: 'Liv. Intermedio' },
+            { room: 'Orcio', teacher: 'Giacomo e Gloria', style: 'Urban Kiz', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '10:45 – 11:45',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Antonio Berardi', style: 'Sentimento y Sabor', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Sala Congressi', teacher: 'Daniel Sanchez', style: 'Bachata Sensual', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Eneris Mulgado', style: 'Salsa Ladys Style', level: 'Liv. Intermedio' },
+            { room: 'Orcio', teacher: 'Fernando e Michela', style: 'Semba', level: 'Liv. Intermedio' }
+          ]
+        },
+        {
+          time: '11:45 – 12:45',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Chiquito y Dominican Power', style: 'Reggaeton / Dembow', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Angelo e Sara', style: 'Bachata Acrobatica', level: 'Liv. Intermedio' },
+            { room: 'Gazebo', teacher: 'Roly Maden', style: 'Salsa Cubana', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Orcio', teacher: 'Gugu Ricci', style: 'Urbankiz', level: 'Liv. Intermedio' }
+          ]
+        },
+        {
+          time: '15:30 – 16:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Soul Beat', style: 'Footwork Mambo', level: 'Liv. Intermedio' },
+            { room: 'Sala Congressi', teacher: 'Chiquito y Dominican Power', style: 'Bachata de Barrio', level: 'Liv. Intermedio' },
+            { room: 'Gazebo', teacher: 'Angelo Gioffrè', style: 'Salsa Fusion', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Orcio', teacher: 'Gianni e Sabrina', style: 'Kizomba Fusion', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '16:30 – 17:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Johnny Vazquez', style: 'Salsa Romàntica Coppia', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Sala Congressi', teacher: 'Sergio Sanchez y Elena', style: 'Conexion en Pareja', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Eneris Mulgado', style: 'Timba con Reparto', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Edo e Giuly', style: 'Music Interpretation (Kizomba)', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '17:30 – 18:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Marco Ferrigno & Ansima Production', style: 'Coppia e Tecnica di Giri (Salsa)', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Willy y Noura', style: 'Bachata Popiwa', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Gazebo', teacher: 'Maria y Vincenzo', style: 'Salsa BodySkill', level: 'Liv. Intermedio' },
+            { room: 'Orcio', teacher: 'Caribe Fusion Dance Marche', style: 'Kizomba Fusion', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '18:30 – 19:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Antonio Berardi', style: 'Mambo Fusion Berardi Style', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Daniel Sanchez', style: 'Bachata Sensual', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Gazebo', teacher: 'Claudio D\'Ercole', style: 'Salsa Fusion', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Ozy Shyne', style: 'Solo - Man Styling (Kizomba)', level: 'Liv. Intermedio' }
+          ]
+        }
+      ],
+      meals: [
+        { time: '12:45 – 15:00', desc: 'Pranzo a buffet al Belvedere (puntuali)' },
+        { time: '19:45 – 22:00', desc: 'Cena a buffet al Belvedere (puntuali)' }
+      ],
+      evenings: [
+        { time: '22:00', desc: '<strong>Show in Anfiteatro…</strong> a seguire serata danzante<br>Sala Salsa e Bachata (Terrazza) · DJ Pedro Ricio · DJ Pino Valerio · DJ Igor El Kubanito<br>Sala Kizomba (Sala Playground) · DJ Ozy Shyne · DJ Edo' }
+      ]
+    },
+    {
+      id: 'g4',
+      title: 'Martedì 2 Giugno',
+      subtitle: 'Chiusura',
+      meals_top: { time: '08:00 – 10:00', desc: 'Colazione al Belvedere' },
+      slots: [
+        {
+          time: '09:45 – 10:45',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Vito e Stefania', style: 'On 1 Salsa Partnerwork', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Edwin y Marianita', style: 'Dominican Pacheco Partnerwork', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Sabor Diferente', style: 'Man Style (Salsa)', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Nicola e Alessia', style: 'Bachata Fusion', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '10:45 – 11:45',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Michele Di Benedetto', style: 'New York Style', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Alessio y Natalia', style: 'Bachazouk', level: 'Liv. Intermedio' },
+            { room: 'Gazebo', teacher: 'Ali-Z', style: 'Salsa Fusion', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'L.A. Flow', style: 'Footwork L.A. Style', level: 'Liv. Open' }
+          ]
+        },
+        {
+          time: '11:45 – 12:45',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Elvis y Sabrina', style: 'Salsa Coreografica', level: 'Liv. Intermedio / Avanz.' },
+            { room: 'Sala Congressi', teacher: 'Maurizio Bollo e Serena', style: 'Dominican Vibes (Bachata)', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Bozzy Bro\'', style: 'Salsa Mambo Fusion', level: 'Liv. Open' },
+            { room: 'Orcio', teacher: 'Gugu Ricci', style: 'Urbankiz', level: 'Liv. Intermedio' }
+          ]
+        },
+        {
+          time: '15:30 – 16:30',
+          lessons: [
+            { room: 'Terrazza', teacher: 'Soul Beat', style: 'Salsa New York Style', level: 'Liv. Open' },
+            { room: 'Sala Congressi', teacher: 'Angelo e Sara', style: 'Bachata Musicality', level: 'Liv. Open' },
+            { room: 'Gazebo', teacher: 'Full Project', style: 'Salsa Social Coppia', level: 'Liv. Intermedio' },
+            { room: 'Orcio', teacher: 'Kasino Latino', style: 'Bachata Fusion', level: 'Liv. Intermedio' }
+          ]
+        }
+      ],
+      meals: [
+        { time: '13:00 – 15:00', desc: 'Pranzo a buffet al Belvedere (puntuali)' }
+      ],
+      evenings: [
+        { time: '16:30', desc: 'Festa di chiusura in Gazebo' }
+      ]
+    }
+  ];
+
+  // ---------- RENDER ----------
+  const main = document.getElementById('program');
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  days.forEach(day => {
+    const dayEl = document.createElement('section');
+    dayEl.className = 'day';
+    dayEl.id = day.id;
+
+    let totalLessons = day.slots.reduce((acc, s) => acc + s.lessons.length, 0);
+
+    dayEl.innerHTML = `
+      <div class="day-head">
+        <h2>${escapeHtml(day.title)}${day.subtitle ? `<span>${escapeHtml(day.subtitle)}</span>` : ''}</h2>
+        <span class="day-count" data-day-count>${totalLessons} lezioni</span>
+      </div>
+    `;
+
+    if (day.meals_top) {
+      dayEl.innerHTML += `
+        <div class="meal">
+          <span class="meal-icon">☕</span>
+          <span class="meal-time">${escapeHtml(day.meals_top.time)}</span>
+          <span class="meal-desc">${escapeHtml(day.meals_top.desc)}</span>
+        </div>
+      `;
+    }
+
+    // Render slots and interleave meals based on time
+    const allItems = [];
+    day.slots.forEach(slot => {
+      allItems.push({ type: 'slot', time: timeToMinutes(slot.time.split('–')[0].trim()), data: slot });
+    });
+    if (day.meals) {
+      day.meals.forEach(m => {
+        allItems.push({ type: 'meal', time: timeToMinutes(m.time.split('–')[0].trim()), data: m });
+      });
+    }
+    allItems.sort((a, b) => a.time - b.time);
+
+    allItems.forEach(item => {
+      if (item.type === 'slot') {
+        const slot = item.data;
+        const lessonsHtml = slot.lessons.map(l => {
+          const genre = detectGenre(l.style);
+          return `
+            <article class="lesson" data-genre="${genre}">
+              <span class="lesson-room">${escapeHtml(l.room)}</span>
+              <div class="lesson-teacher">${escapeHtml(l.teacher)}</div>
+              <div class="lesson-style">${escapeHtml(l.style)}</div>
+              <span class="lesson-level">${escapeHtml(l.level)}</span>
+            </article>
+          `;
+        }).join('');
+
+        const slotEl = document.createElement('div');
+        slotEl.className = 'slot';
+        slotEl.innerHTML = `
+          <div class="slot-time">${escapeHtml(slot.time)}</div>
+          <div class="lessons">${lessonsHtml}</div>
+        `;
+        dayEl.appendChild(slotEl);
+      } else {
+        const m = item.data;
+        const mealEl = document.createElement('div');
+        mealEl.className = 'meal';
+        mealEl.innerHTML = `
+          <span class="meal-icon">🍽️</span>
+          <span class="meal-time">${escapeHtml(m.time)}</span>
+          <span class="meal-desc">${escapeHtml(m.desc)}</span>
+        `;
+        dayEl.appendChild(mealEl);
+      }
+    });
+
+    if (day.evenings) {
+      day.evenings.forEach(e => {
+        const ev = document.createElement('div');
+        ev.className = 'evening';
+        ev.innerHTML = `
+          <div class="evening-time">${escapeHtml(e.time)}</div>
+          <div class="evening-desc">${e.desc}</div>
+        `;
+        dayEl.appendChild(ev);
+      });
+    }
+
+    main.appendChild(dayEl);
+  });
+
+  // Info section
+  const info = document.createElement('div');
+  info.className = 'info';
+  info.innerHTML = `
+    <h3>Informazioni utili</h3>
+    <p><strong>Sale:</strong> Terrazza · Sala Congressi · Gazebo · Orcio · Sala Playground</p>
+    <p><strong>In caso di maltempo:</strong> le lezioni della Sala Terrazza saranno spostate nella Sala Orcio, e le lezioni della Sala Orcio nella Sala adiacente alla Sala Congressi (Sala Playground).</p>
+    <p><em>Il programma potrebbe subire delle variazioni.</em></p>
+  `;
+  main.appendChild(info);
+
+  function timeToMinutes(t) {
+    const [h, m] = t.split(':').map(Number);
+    return h * 60 + (m || 0);
+  }
+
+  // ---------- FILTER ----------
+  const chips = document.querySelectorAll('#genre-filter .chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const g = chip.dataset.genre;
+      applyFilter(g);
+    });
+  });
+
+  function applyFilter(genre) {
+    document.querySelectorAll('.lesson').forEach(el => {
+      if (genre === 'all' || el.dataset.genre === genre) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+
+    // Hide empty slots and update day counts
+    document.querySelectorAll('.day').forEach(day => {
+      let dayVisible = 0;
+      day.querySelectorAll('.slot').forEach(slot => {
+        const visible = slot.querySelectorAll('.lesson:not(.hidden)').length;
+        slot.classList.toggle('hidden', visible === 0);
+        dayVisible += visible;
+      });
+      const counter = day.querySelector('[data-day-count]');
+      if (counter) counter.textContent = dayVisible + ' lezion' + (dayVisible === 1 ? 'e' : 'i');
+
+      // If day has zero lessons for the filter, show empty state once
+      let empty = day.querySelector('.empty');
+      if (dayVisible === 0 && genre !== 'all') {
+        if (!empty) {
+          empty = document.createElement('div');
+          empty.className = 'empty';
+          empty.textContent = 'Nessuna lezione di questo genere in questa giornata.';
+          day.appendChild(empty);
+        }
+      } else if (empty) {
+        empty.remove();
+      }
+    });
+  }
+
+  // ---------- BACK TO TOP ----------
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('show', window.scrollY > 600);
+  });
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
